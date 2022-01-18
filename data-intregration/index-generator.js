@@ -15,6 +15,8 @@ async function* processDbDataGen() {
   }
 }
 
+console.time('generator');
 for await ( const data of processDbDataGen() ) {
   console.table(data);
 }
+console.timeEnd('generator');

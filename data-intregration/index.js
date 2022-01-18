@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const myDB = async () => Array.from({length: 1000}, (v, index) => `${index}-cellphone`);
+const myDB = async () => Array.from({length: 10000}, (v, index) => `${index}-cellphone`);
 
 const PRODUCTS_URL = 'http://localhost:3000/products';
 const CART_URL = 'http://localhost:4000/cart';
@@ -16,5 +16,6 @@ async function processDbData() {
 
   return responses;
 }
-
+console.time('process');
 console.table(await processDbData());
+console.timeEnd('process');
