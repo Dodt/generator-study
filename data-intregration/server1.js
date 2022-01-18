@@ -1,4 +1,6 @@
 import { createServer } from 'http';
+import { parse } from url;
+import { randomUUID } from 'crypto';
 
 const PORT = 3000;
 
@@ -7,10 +9,14 @@ async function handler ( request, response ) {
     request.method === 'GET' &&
     request.url.includes('products')
   ){
-    
-    return response.end('hey!')
-
+    const { query: productName } = parse(request.url, true);
+    const result = { 
+      id: randomUUID(),
+      productName
+    }
+    return response.end(JSON.stringify(result));
   }
+
   return response.end('hey!')
 }
 
