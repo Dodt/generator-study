@@ -1,0 +1,1 @@
+### Study made in Erick Wendel´s channel about generators.  link: [Generators](https://www.youtube.com/watch?v=rcQgqerZ48E) 
